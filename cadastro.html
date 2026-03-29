@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Alistamento Militar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-gradient-to-br from-green-50 to-green-100 min-h-screen">
+    <!-- Header -->
+    <header class="bg-green-800 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <i class="fas fa-shield-halved text-2xl"></i>
+                    <span class="font-bold">Alistamento Militar</span>
+                </div>
+                <a href="index.html" class="text-green-200 hover:text-white text-sm">
+                    <i class="fas fa-sign-out-alt mr-1"></i> Sair
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <!-- Progress Steps -->
+            <div class="mb-8">
+                <div class="flex items-center justify-between">
+                    <div class="flex flex-col items-center">
+                        <div id="step1-indicator" class="w-10 h-10 bg-green-600 text-white rounded-full flex items-center justify-center font-bold">1</div>
+                        <span class="text-xs mt-2 text-green-700 font-medium">Dados Pessoais</span>
+                    </div>
+                    <div class="flex-1 h-1 bg-gray-300 mx-2" id="progress-line-1"></div>
+                    <div class="flex flex-col items-center">
+                        <div id="step2-indicator" class="w-10 h-10 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center font-bold">2</div>
+                        <span class="text-xs mt-2 text-gray-500">Endereço</span>
+                    </div>
+                    <div class="flex-1 h-1 bg-gray-300 mx-2" id="progress-line-2"></div>
+                    <div class="flex flex-col items-center">
+                        <div id="step3-indicator" class="w-10 h-10 bg-gray-300 text-gray-600 rounded-full flex items-center justify-center font-bold">3</div>
+                        <span class="text-xs mt-2 text-gray-500">Confirmação</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Form Card -->
+            <div class="bg-white rounded-2xl shadow-xl p-6 md:p-8">
+                <!-- User Info from GOV.br -->
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-user-check text-blue-600 text-xl"></i>
+                        <div>
+                            <p class="text-sm text-blue-800 font-medium">Dados importados do GOV.br</p>
+                            <p class="text-xs text-blue-600">João Silva Santos • CPF: ***.456.789-**</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 1: Dados Pessoais -->
+                <div id="step1" class="step-content">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-user text-green-600 mr-2"></i>
+                        Dados Pessoais
+                    </h2>
+                    
+                    <form id="step1Form" class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Nome Completo</label>
+                                <input type="text" id="nomeCompleto" value="João Silva Santos" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">CPF</label>
+                                <input type="text" id="cpfCadastro" value="123.456.789-00" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Data de Nascimento</label>
+                                <input type="text" id="dataNascimento" value="15/03/2005" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Sexo</label>
+                                <input type="text" id="sexo" value="Masculino" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Nome da Mãe</label>
+                            <input type="text" id="nomeMae" value="Maria Silva Santos" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">E-mail</label>
+                                <input type="email" id="email" placeholder="seu@email.com" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Telefone</label>
+                                <input type="tel" id="telefone" placeholder="(11) 99999-9999" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+                            Próximo <i class="fas fa-arrow-right ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Step 2: Endereço -->
+                <div id="step2" class="step-content hidden">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-map-marker-alt text-green-600 mr-2"></i>
+                        Endereço
+                    </h2>
+                    
+                    <form id="step2Form" class="space-y-4">
+                        <!-- Geolocation Button -->
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <button type="button" onclick="getLocation()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-4 rounded-lg transition flex items-center justify-center space-x-2">
+                                <i class="fas fa-location-crosshairs"></i>
+                                <span>Usar minha localização</span>
+                            </button>
+                            <p class="text-xs text-blue-600 mt-2 text-center">
+                                <i class="fas fa-info-circle mr-1"></i>
+                                Preenche o endereço automaticamente usando seu GPS
+                            </p>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">CEP</label>
+                                <input type="text" id="cep" placeholder="00000-000" maxlength="9" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Logradouro</label>
+                                <input type="text" id="logradouro" placeholder="Rua, Avenida, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Número</label>
+                                <input type="text" id="numero" placeholder="123" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                            <div class="md:col-span-2">
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Complemento</label>
+                                <input type="text" id="complemento" placeholder="Apto, Bloco, etc." class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Bairro</label>
+                                <input type="text" id="bairro" placeholder="Seu bairro" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 text-sm font-medium mb-2">Cidade</label>
+                                <input type="text" id="cidade" placeholder="Sua cidade" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 text-sm font-medium mb-2">Estado</label>
+                            <select id="estado" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 outline-none" required>
+                                <option value="">Selecione...</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="BA">Bahia</option>
+                                <option value="PR">Paraná</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="CE">Ceará</option>
+                                <option value="PA">Pará</option>
+                                <option value="SC">Santa Catarina</option>
+                            </select>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <button type="button" onclick="goToStep(1)" class="flex-1 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-lg transition">
+                                <i class="fas fa-arrow-left mr-2"></i> Voltar
+                            </button>
+                            <button type="submit" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+                                Próximo <i class="fas fa-arrow-right ml-2"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Step 3: Confirmação -->
+                <div id="step3" class="step-content hidden">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6">
+                        <i class="fas fa-check-circle text-green-600 mr-2"></i>
+                        Confirmação
+                    </h2>
+                    
+                    <div class="space-y-4">
+                        <!-- Summary -->
+                        <div class="bg-gray-50 rounded-lg p-4">
+                            <h3 class="font-semibold text-gray-800 mb-3">Resumo do Cadastro</h3>
+                            <div class="space-y-2 text-sm">
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Nome:</span>
+                                    <span class="font-medium">João Silva Santos</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">CPF:</span>
+                                    <span class="font-medium">123.456.789-00</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Data de Nascimento:</span>
+                                    <span class="font-medium">15/03/2005</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">E-mail:</span>
+                                    <span class="font-medium" id="summary-email">joao@email.com</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Telefone:</span>
+                                    <span class="font-medium" id="summary-telefone">(11) 99999-9999</span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-gray-600">Cidade:</span>
+                                    <span class="font-medium" id="summary-cidade">São Paulo - SP</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
+                            <label class="flex items-start space-x-3 cursor-pointer">
+                                <input type="checkbox" id="termos" class="mt-1 rounded" required>
+                                <span class="text-sm text-gray-700">
+                                    Declaro que as informações prestadas são verdadeiras e estou ciente de que o alistamento militar é obrigatório para cidadãos do sexo masculino que completarem 18 anos.
+                                </span>
+                            </label>
+                        </div>
+
+                        <div class="flex space-x-4">
+                            <button type="button" onclick="goToStep(2)" class="flex-1 border border-gray-300 hover:bg-gray-50 text-gray-700 font-semibold py-3 rounded-lg transition">
+                                <i class="fas fa-arrow-left mr-2"></i> Voltar
+                            </button>
+                            <button type="button" onclick="submitForm()" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition">
+                                <i class="fas fa-check mr-2"></i> Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-6 mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-green-200 text-sm">Protótipo de Melhoria UX - Atividade Escolar</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

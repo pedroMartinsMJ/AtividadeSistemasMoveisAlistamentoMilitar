@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alistamento Militar - Protótipo UX</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="min-h-screen">
+    <!-- Hero Section with Background Image -->
+    <div class="relative min-h-screen">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1920&q=80" 
+                alt="Alistamento Militar" 
+                class="w-full h-full object-cover"
+            >
+            <div class="absolute inset-0 bg-gradient-to-r from-green-900/90 via-green-800/80 to-green-700/70"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="relative z-10 bg-transparent">
+            <div class="container mx-auto px-4 py-4">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center space-x-3">
+                        <div class="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                            <i class="fas fa-shield-halved text-2xl text-white"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-xl font-bold text-white">Alistamento Militar</h1>
+                            <p class="text-green-200 text-sm">Exército Brasileiro</p>
+                        </div>
+                    </div>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="index.html" class="text-white hover:text-green-200 transition font-medium">Início</a>
+                        <a href="ajuda.html" class="text-green-100 hover:text-white transition">Ajuda</a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Content -->
+        <main class="relative z-10 container mx-auto px-4 py-12 md:py-24">
+            <div class="grid md:grid-cols-2 gap-12 items-center min-h-[70vh]">
+                <!-- Left Content -->
+                <div class="text-white">
+                    <div class="inline-block bg-yellow-500 text-yellow-900 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        Inscrições abertas até 30/06
+                    </div>
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                        Alistamento<br>
+                        <span class="text-yellow-400">Militar Online</span>
+                    </h2>
+                    <p class="text-xl text-green-100 mb-8 leading-relaxed">
+                        Realize seu alistamento de forma rápida, simples e 100% online. 
+                        Sua contribuição para a defesa do Brasil começa aqui.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="login.html" class="bg-yellow-500 hover:bg-yellow-400 text-yellow-900 font-bold py-4 px-8 rounded-lg shadow-lg transition transform hover:scale-105 flex items-center justify-center space-x-3">
+                            <i class="fas fa-play-circle text-xl"></i>
+                            <span>Começar Agora</span>
+                        </a>
+                        <a href="#info" class="border-2 border-white/50 hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg transition flex items-center justify-center space-x-3">
+                            <i class="fas fa-info-circle"></i>
+                            <span>Saiba Mais</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Content - Login Card -->
+                <div class="bg-white rounded-2xl shadow-2xl p-8 transform hover:scale-[1.02] transition">
+                    <div class="text-center mb-6">
+                        <div class="inline-block bg-green-100 rounded-full p-4 mb-4">
+                            <i class="fas fa-user-shield text-green-600 text-4xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Acesse sua Conta</h3>
+                        <p class="text-gray-600">Conecte-se com GOV.br para continuar</p>
+                    </div>
+
+                    <!-- GOV.br Login Button -->
+                    <a href="login.html" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-6 rounded-lg shadow-lg transition transform hover:scale-[1.02] flex items-center justify-center space-x-3 mb-4">
+                        <img src="https://sso.acesso.gov.br/assets/govbr/img/govbr-colorido-b.png" alt="GOV.br" class="h-6 bg-white rounded px-2 py-1">
+                        <span>Entrar com GOV.br</span>
+                    </a>
+
+                    <div class="flex items-center my-4">
+                        <div class="flex-1 border-t border-gray-300"></div>
+                        <span class="px-4 text-gray-500 text-sm">ou</span>
+                        <div class="flex-1 border-t border-gray-300"></div>
+                    </div>
+
+                    <a href="cadastro.html" class="w-full border-2 border-green-600 text-green-600 hover:bg-green-50 font-semibold py-3 px-6 rounded-lg transition flex items-center justify-center space-x-2">
+                        <i class="fas fa-user-plus"></i>
+                        <span>Criar Conta GOV.br</span>
+                    </a>
+
+                    <p class="text-xs text-gray-500 text-center mt-4">
+                        <i class="fas fa-lock mr-1"></i>
+                        Seus dados estão protegidos pelo GOV.br
+                    </p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+            <a href="#info" class="text-white/70 hover:text-white">
+                <i class="fas fa-chevron-down text-2xl"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Info Section -->
+    <section id="info" class="bg-white py-16">
+        <div class="container mx-auto px-4">
+
+            <!-- Features -->
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-clock text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Rápido e Fácil</h3>
+                    <p class="text-gray-600 text-sm">Processo simplificado em poucos passos</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-mobile-alt text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">100% Online</h3>
+                    <p class="text-gray-600 text-sm">Faça tudo pelo celular ou computador</p>
+                </div>
+                <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-chart-line text-green-600 text-2xl"></i>
+                    </div>
+                    <h3 class="font-semibold text-gray-800 mb-2">Acompanhe o Status</h3>
+                    <p class="text-gray-600 text-sm">Veja o andamento em tempo real</p>
+                </div>
+            </div>
+
+            <!-- Info Section -->
+            <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-r-lg p-6">
+                <div class="flex items-start">
+                    <i class="fas fa-info-circle text-yellow-600 text-xl mr-3 mt-1"></i>
+                    <div>
+                        <h4 class="font-semibold text-yellow-800 mb-2">Importante</h4>
+                        <p class="text-yellow-700 text-sm">
+                            O alistamento militar é obrigatório para todos os cidadãos brasileiros do sexo masculino que completarem 18 anos. 
+                            O período de inscrição vai de <strong>1º de janeiro a 30 de junho</strong> de cada ano.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-green-900 text-white py-8 mt-12">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-green-200 text-sm mb-2">
+                Protótipo de Melhoria UX - Atividade Escolar
+            </p>
+            <p class="text-green-300 text-xs">
+                <i class="fas fa-graduation-cap mr-1"></i>
+                Este é um protótipo acadêmico, não é o site oficial do Exército Brasileiro
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Check if user is already logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            if (checkSession()) {
+                window.location.href = 'dashboard.html';
+            }
+        });
+    </script>
+</body>
+</html>
